@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
+###upper and lower bound in multiset####
     multiset<int> ms = {1, 3, 3, 5, 7, 9};
     int x = 3;
 
@@ -18,5 +15,26 @@ int main() {
     else
         cout << "Upper Bound not found\n";
 
-    return 0;
-}
+
+
+######find a value or it's small value in  a multiset##### 
+      if you are using a multiset and want to find a value or the next smaller value (i.e., the greatest value ≤ x), you can use the upper_bound
+      multiset<int> ms = {1, 3, 3, 5, 7, 9};
+      int x = 4;
+
+    auto it = ms.upper_bound(x); // first element > x
+
+    if (it == ms.begin()) {
+        cout << "No element ≤ " << x << endl;
+    } else {
+        --it; // go to the largest element ≤ x
+        cout << "Element ≤ " << x << " is " << *it << endl;
+    }
+
+*ms.upper_bound(x) returns the first iterator to value strictly greater than x.
+*--it gives you the largest value ≤ x.
+*If upper_bound(x) is ms.begin(), then all elements are greater than x, so no such smaller or equal value exists.
+
+
+
+
