@@ -1,2 +1,0 @@
-username=ataur
-password=09375
